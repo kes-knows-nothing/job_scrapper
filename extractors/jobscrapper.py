@@ -17,35 +17,19 @@ def extract_jobs(term):
         company_name = job.find_all("h3")[0]
         companyName = company_name.string.strip()
         location_pay = job.find_all("div", class_= "location")
-        # print("-------------------------------------------")
-        # print(jobTitle)
-        # print("//////////////////////////////////////////")
-        # print(companyName)
-        # print("//////////////////////////////////////////")
         if isClosed == None:
            isHired = "Hiring Now"
-          #  print(isHired)
         else:
            isHired = isClosed.string.title()
-          #  print(isHired)
-        # print("//////////////////////////////////////////")
         if verified == []:
            isVerified = "Unverified"
-          #  print(isVerified)
         else:
            isVerified = verified[0].string.title()
-          #  print(isVerified)
-        # print("//////////////////////////////////////////")
         pay = location_pay[len(location_pay) - 1].string
-        # print(pay)
         location_pay.pop(len(location_pay) - 1)
         location = []
         for loca in location_pay:
-          # print("//////////////////////////////////////////")
           location.append(loca.string)
-        # print(location)
-        # print("-------------------------------------------")
-        
         job_data = {
            "company" : companyName,
            "job_title" :  jobTitle,
@@ -54,20 +38,21 @@ def extract_jobs(term):
            "pay" : pay,
            "location" : location
         }
-      
         result.append(job_data)
-        
-      for list in result:
-        print(list)
+      return result
     else:
         print("can't get a job")
-print("REACT")
-extract_jobs("react")
-print("RUST")
-extract_jobs("rust")
-print("GOLANG")
-extract_jobs("golang")
-print("PTYHON")
-extract_jobs("python")
+   
+
+
+        
+# print("REACT")
+# extract_jobs("react")
+# print("RUST")
+# extract_jobs("rust")
+# print("GOLANG")
+# extract_jobs("golang")
+# print("PTYHON")
+# extract_jobs("python")
 
 
