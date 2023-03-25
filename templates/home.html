@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Job Scrapper</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+  <script src="https://kit.fontawesome.com/040cceeda8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>hello faker!</h1>
-  <form action="http://127.0.0.1:5000/search">
-    <input type="text" name="keyword" placeholder="Give me a keyword">
-    <button>Submit</button>
+  <main class="container">
+    <h1 style="text-align: center; margin-top:20%;">Job is everywhere!</h1>
+    <div class="grid" style="width: 30%; margin: 0 auto;">
+      <form action="http://127.0.0.1:5000/search">
+      <input type="text" name="keyword" placeholder="Let's find a job in the world.">
+      <button>Submit</button>
+    </div>
+  </main>
   </form> 
 </body>
 </html>

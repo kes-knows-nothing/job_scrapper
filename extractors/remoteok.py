@@ -30,6 +30,3 @@ def extract_jobs(term):
         print("Can't get jobs.")
     return results
 
-
-jobs = extract_jobs("golang")
-print(jobs)

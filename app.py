@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 app = Flask(__name__)
-from extractors.jobscrapper import extract_jobs
+from extractors.remoteok import extract_jobs
+from extractors.weworkremotely import extract_jobs1
 
 @app.route('/')
 def hello_world():
@@ -9,5 +10,6 @@ def hello_world():
 @app.route("/search")
 def search():
     keyword = request.args.get("keyword")
-    result = extract_jobs(keyword)
-    return render_template("search.html", keyword = keyword, result = result )
+    reok = extract_jobs(keyword)
+    wework = extract_jobs1(keyword)
+    return render_template("search.html", keyword = keyword, reok = reok, wework = wework )
